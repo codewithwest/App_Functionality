@@ -1,0 +1,38 @@
+import React, { useState, useEffect } from 'react';
+import {
+  Text,
+  View,
+  StyleSheet,
+  Dimensions,
+  Platform,
+  ScrollView,
+} from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import MapView, { Marker } from 'react-native-maps';
+import * as Location from 'expo-location';
+//import {Marker} from 'react-native-expo';
+
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
+
+function AppDev() {
+  return (
+    <View style={styles.container}>
+      <Text>Services Displays Coming Soon</Text>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+});
+
+export default AppDev;
