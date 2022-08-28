@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  ScrollView,
+  ScrollViewComponent,
   Dimensions,
   TextInput,
   SafeAreaView,
@@ -34,10 +34,10 @@ function RegistrationScreen({ navigation }) {
 
   return (
  
-    <ScrollView
-      style={styles.container}
-      keyboardShouldPersistTaps="always">
-      <SafeAreaView>
+    
+     <View style={styles.container}
+     keyboardShouldPersistTaps="always">
+      <SafeAreaView >
       <Image
         style={styles.logo}
         source={require('../../assets/favicon.png')}
@@ -92,7 +92,7 @@ function RegistrationScreen({ navigation }) {
         </Text>
       </View>
       </SafeAreaView>
-    </ScrollView>
+    </View>
     
   )
 }

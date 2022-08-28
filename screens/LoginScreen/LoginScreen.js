@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView,Dimensions, StyleSheet , TextInput, SafeAreaView, TouchableOpacity, View,Text} from 'react-native';
+import { ScrollView,Dimensions, StyleSheet , TextInput, SafeAreaView, TouchableOpacity, View,Text, ScrollViewComponent} from 'react-native';
 import { Button, Card } from 'react-native-paper';
 import { DefaultTheme } from 'react-native-paper';
 import { useState } from 'react';
@@ -17,8 +17,8 @@ const onFooterLinkPress = () => {
     }
 
 return ( 
-<ScrollView style={styles.scrollView}>
-<SafeAreaView>
+ <View style={styles.scrollView}>
+<SafeAreaView >
 <Text style={styles.header}>
   KaiKai
 </Text>
@@ -52,7 +52,7 @@ onPress={
                     <Text style={styles.footerText}>Don't have an account? <Text onPress={onFooterLinkPress} style={styles.footerLink}>Sign up</Text></Text>
                 </View>
 </SafeAreaView>
-</ScrollView>
+</View>
 )
 }
 
@@ -60,9 +60,10 @@ onPress={
 const styles = StyleSheet.create({
 scrollView: {
 backgroundColor: DefaultTheme.colors.background,
-padding: 10,
+
 alignItems: 'center',
-justifyContent:'center'
+justifyContent:'center',
+paddingTop:windowHeight/4
 },
 header:{
   textAlign:'center',

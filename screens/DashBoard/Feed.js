@@ -15,7 +15,6 @@ import { AppDevData,WebDevData,DeskDevData,TechSDevData} from '../../Data/Data';
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
-//Take in Value {Navigation} to use navigation.navigate()
 function Feed({ navigation }) {
   const onAppServiceLinkPress = () => {
     navigation.navigate('AppDev')
@@ -31,6 +30,7 @@ function Feed({ navigation }) {
   };
   return (
     <SafeAreaView>
+      <View style={styles.space}>
       <FlatList
         data={AppDevData}
         contentInset={{ padding: 5 }}
@@ -41,10 +41,7 @@ function Feed({ navigation }) {
               onPress={onAppServiceLinkPress}>
               <View>
                 <Text
-                  style={
-                    (styles.text,
-                    { fontSize: 16, fontWeight: 'bold', margin: 3.3 })
-                  }>
+                  style={styles.header}>
                   {item.category}
                 </Text>
                 <Text style={styles.text}>{item.name}</Text>
@@ -54,7 +51,9 @@ function Feed({ navigation }) {
             </TouchableOpacity>
           );
         }}></FlatList>
-      ,
+        </View>
+      
+      <View style={styles.space}>
       <FlatList
         data={WebDevData}
         contentInset={{ padding: 0.5 }}
@@ -64,11 +63,7 @@ function Feed({ navigation }) {
               style={styles.options}
               onPress={onWebServiceLinkPress}>
               <View style={{ padding: 5 }}>
-                <Text
-                  style={
-                    (styles.text,
-                    { fontSize: 16, fontWeight: 'bold', margin: 3.3 })
-                  }>
+                <Text style={styles.header}>
                   {item.category}
                 </Text>
                 <Text style={styles.text}>{item.name}</Text>
@@ -78,7 +73,8 @@ function Feed({ navigation }) {
             </TouchableOpacity>
           );
         }}></FlatList>
-      ,
+        </View>
+      <View style={styles.space}>
       <FlatList
         data={DeskDevData}
         contentInset={{ padding: 0.5 }}
@@ -90,8 +86,8 @@ function Feed({ navigation }) {
               <View style={{ padding: 5 }}>
                 <Text
                   style={
-                    (styles.text,
-                    { fontSize: 16, fontWeight: 'bold', margin: 3.3 })
+                    styles.header
+                    
                   }>
                   {item.category}
                 </Text>
@@ -102,7 +98,9 @@ function Feed({ navigation }) {
             </TouchableOpacity>
           );
         }}></FlatList>
-      ,
+        </View>
+      
+      <View style={styles.space}>
       <FlatList
         data={TechSDevData}
         contentInset={{ padding: 0.5 }}
@@ -114,8 +112,8 @@ function Feed({ navigation }) {
               <View style={{ padding: 5 }}>
                 <Text
                   style={
-                    (styles.text,
-                    { fontSize: 16, fontWeight: 'bold', margin: 3.3 })
+                    styles.header
+                    
                   }>
                   {item.category}
                 </Text>
@@ -126,13 +124,19 @@ function Feed({ navigation }) {
             </TouchableOpacity>
           );
         }}></FlatList>
+        </View>
+        
     </SafeAreaView>
   );
 }
+
+
 const styles = StyleSheet.create({
+  space:{padding:4.8},
+  header:{ fontSize: 20, fontWeight: 'bold', margin: 3.3 },
   images: {
-    height: 69,
-    width: 69,
+    height: 89,
+    width: 89,
     position: 'absolute',
     right: 0,
     margin: 10,

@@ -3,9 +3,7 @@ import { Text, View, StyleSheet, Dimensions, Platform } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import MapView, { Marker } from 'react-native-maps';
-import * as Location from 'expo-location';
-//import {Marker} from 'react-native-expo';
+
 
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
